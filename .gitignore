@@ -1,0 +1,24 @@
+# Ignora arquivos de ambiente
+.env
+
+# Ignora pastas de build e distribuição do Python
+build/
+dist/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Ignora arquivos de especificação de build como o do PyInstaller
+*.spec
+
+# Ignora arquivos específicos do sistema operacional
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Ignora arquivos de log
+*.log
+
+# Ignora arquivos de backup criados pelo seu script
+*.zip
