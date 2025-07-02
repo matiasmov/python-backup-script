@@ -1,17 +1,13 @@
 import requests
 import os
+from .config_manager import API_BASE_URL, AUTH_TOKEN, PATH
 from dotenv import load_dotenv
 
-load_dotenv() # carregando env
 
-path = os.getenv("BACKUP_PATH")
-api_base_url = os.getenv("API_BASE_URL")
-auth_token = os.getenv("AUTH_TOKEN")
-
-url_list_backup = f"{api_base_url}/api/v1/settings/backups"
+url_list_backup = f"{API_BASE_URL}/api/v1/settings/backups"
 
 headers = {
-    "Authorization": f"Bearer {auth_token}",
+    "Authorization": f"Bearer {AUTH_TOKEN}",
     "Accept": "application/zip, application/json"
 }
 
@@ -26,7 +22,7 @@ sorted_backups = sorted(data["rows"], key=lambda x: x["modified_value"], reverse
 latest_backup = sorted_backups[0]
 filename = latest_backup["filename"]
 url = f"http://10.1.0.251:8081/api/v1/settings/backups/download/{filename}"
-full_path = os.path.join(path, filename)
+full_path = os.path.join(PATH, filename)
 
 # Baixando o backup escolhido acima
 response = requests.get(url, headers=headers, stream=True)
