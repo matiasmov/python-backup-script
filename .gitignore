@@ -22,3 +22,5 @@ Thumbs.db # Windows
 
 # Ignora arquivos de backup criados pelo seu script
 *.zip
+
+*.config_manager.py
