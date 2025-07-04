@@ -31,7 +31,7 @@ def run_full_backup_process():
     finally:
         # Este bloco é executado SEMPRE, independentemente de ter ocorrido um erro ou não.
         # Garante que o e-mail seja enviado.
-        print("Processo de backup concluído. Enviando notificação por e-mail...")
+        print("Processo de backup concluído. Enviando notificação para o e-mail configurado...")
         send_email(email_subject, email_body, EMAIL_RECEIVER)
 
 if __name__ == "__main__":
