@@ -20,9 +20,12 @@ Thumbs.db # Windows
 # Ignora arquivos de log
 *.log
 
-# Ignora arquivos de backup criados pelo seu script
+# Ignora arquivos de backup criados
 *.zip
 
-.config_manager.py
-*.config_manager
-*.config_manager.py
+# Ignora arquivos de configuração específicos
+# Garante que os arquivos de configuração com dados sensíveis nunca sejam versionados
+config_manager.py
+configEmail.py    
+email_utils.py
+notes
